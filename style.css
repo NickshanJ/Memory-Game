@@ -6,7 +6,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background: red;
+  background: red; /* Change background to red */
   color: white;
 }
 
@@ -23,7 +23,7 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  background-color: white;
+  background-color: white; /* Change button background to white */
   color: black;
   border-radius: 5px;
   cursor: pointer;
@@ -32,7 +32,7 @@ button {
 }
 
 button:hover {
-  background-color: white;
+  background-color: #f0f0f0; /* Lighter shade of white */
 }
 
 .game-container {
@@ -44,7 +44,7 @@ button:hover {
 .card {
   width: 100px;
   height: 100px;
-  background-color: white;
+  background-color: white; /* Change card background to white */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,43 +52,52 @@ button:hover {
   position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.6s; /* Smooth flip transition */
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
 
 .card.flip {
-  background-color: white;
+  background-color: white; /* Ensure flipped card background is white */
   transform: rotateY(180deg);
 }
 
 .card img {
   max-width: 90%;
   max-height: 90%;
-  display: none;
+  display: none; /* Initially hide the front image */
   border-radius: 10px;
   backface-visibility: hidden;
 }
 
 .card.flip img {
-  display: block;
-}
-
-.card.flip .card-back {
-  display: none;
+  display: block; /* Show the front image when the card is flipped */
 }
 
 .card-back {
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: white; /* Change card-back to white */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 40px;
-  color: red;
+  color: black;
   border-radius: 10px;
   backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-back img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.card.flip .card-back {
+  display: none; /* Hide the back content when the card is flipped */
 }
 
 .card:hover {

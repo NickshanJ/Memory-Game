@@ -13,6 +13,7 @@ let lockBoard = false;
 let firstCard, secondCard;
 let moves = 0;
 let score = 0;
+let matchedPairs = 0;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -41,10 +42,10 @@ function createBoard() {
         cardBack.appendChild(cardDesign);
         cardElement.appendChild(cardBack);
 
-        const cardImg = document.createElement('img');
-        cardImg.src = `images/${card}`;
-        cardImg.alt = 'Memory card image';
-        cardElement.appendChild(cardImg);
+        const cardImgFront = document.createElement('img');
+        cardImgFront.src = `images/${card}`;
+        cardImgFront.alt = 'Memory card image';
+        cardElement.appendChild(cardImgFront);
 
         cardElement.addEventListener('click', flipCard);
         gameBoard.appendChild(cardElement);
@@ -76,6 +77,10 @@ function checkForMatch() {
         disableCards();
         score += 10;
         scoreCounter.textContent = score;
+        matchedPairs++;
+        if (matchedPairs === cardsArray.length / 2) {
+            setTimeout(showWinningMessage, 500);
+        }
     } else {
         unflipCards();
     }
@@ -101,9 +106,14 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+function showWinningMessage() {
+    alert(`Congratulations! You've matched all the pairs in ${moves} moves!`);
+}
+
 function restartGame() {
     moves = 0;
     score = 0;
+    matchedPairs = 0;
     movesCounter.textContent = moves;
     scoreCounter.textContent = score;
     createBoard();
