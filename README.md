@@ -14,6 +14,66 @@ A modern web browser (e.g., Chrome, Firefox, Edge).
 
 A text editor (optional, for code modifications).
 
+Steps to Build the Memory Card Game:
+
+1. Set Up the Basic HTML Structure:
+
+Created an HTML file and added elements to structure the game:
+A <div> with id="gameBoard" to serve as the container for the cards.
+A <button> with id="restartBtn" for restarting the game.
+Two <span> elements with id="moves" and id="score" to display the move count and score.
+
+2. Initialize Variables:
+
+Declared variables for key game elements and logic:
+gameBoard, restartBtn, movesCounter, and scoreCounter to reference DOM elements.
+cardsArray to store the list of card images.
+Variables like hasFlippedCard, lockBoard, firstCard, and secondCard to track game state.
+Counters for moves, score, and matchedPairs.
+
+3. Create the Game Board:
+
+Developed the createBoard function to:
+Shuffle the cards.
+Dynamically generate card elements with a front image and back design.
+Add event listeners to handle card flips.
+
+4. Handle Card Flip:
+
+Wrote the flipCard function:
+Checked if the board was locked or the same card was clicked.
+Flipped the card and updated game logic to track the first and second flipped cards.
+
+5. Match Checking:
+
+Implemented the checkForMatch function to:
+Compare the data-card attributes of the flipped cards.
+Handle matched cards by disabling clicks or unmatched cards by flipping them back.
+
+6. Reset and Lock Board:
+
+Added the resetBoard function to:
+Reset tracking variables after each turn.
+Unlock the board after animations complete.
+
+7. Winning Logic:
+
+Created the showWinningMessage function to:
+Display a congratulatory message when all pairs are matched.
+
+8. Game Restart Functionality:
+
+Wrote the restartGame function to:
+Reset all counters and the board state.
+Regenerate the game board.
+
+9. Added Event Listeners:
+
+Attached an event listener to the restart button to call restartGame when clicked.
+
+10. Game Initialization:
+
+Called restartGame to initialize the game when the page loads.
 
 Steps:
 
