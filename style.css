@@ -13,18 +13,24 @@ body {
 
 h1 {
   color: #ffffff;
+  font-family: "Special Elite", serif;
   margin-bottom: 20px;
   font-size: 2em;
 }
 
 #score-board {
+  font-family: "Special Elite", serif;
   color: #ffffff;
   margin-bottom: 20px;
   text-align: center;
+  display: flex;
+  gap: 10px;
 }
 
 button {
   margin-top: 20px;
+  font-family: "Special Elite", serif;
+  border: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -34,6 +40,9 @@ button {
 }
 
 button:hover {
+  box-shadow: -1px 0px 98px 4px rgba(10,10,10,0.75);
+-webkit-box-shadow: -1px 0px 98px 4px rgba(10,10,10,0.75);
+-moz-box-shadow: -1px 0px 98px 4px rgba(10,10,10,0.75);
   background-color: red;
   color: white;
 }
@@ -42,11 +51,6 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(4, 100px);
   grid-gap: 10px;
-}
-
-#score-board {
-  display: flex;
-  gap: 10px;
 }
 
 .card {
